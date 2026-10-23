@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Your Name — Software Engineer</title>
-<meta name="description" content="Portfolio of Your Name — software engineer building fast, considered products.">
+<title>Umme Zaiba — Software Engineer</title>
+<meta name="description" content="Portfolio of Umme Zaiba — software engineer building fast, considered products.">
 <meta name="theme-color" content="#0a0a0b">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -18,16 +18,16 @@
 <div class="cur" id="cur"></div><div class="ring" id="ring"><span></span></div>
 
 <div class="hud">
-  <div class="tl"><b data-t="fullName">YOUR NAME</b><br><span data-t="role">SOFTWARE ENGINEER</span></div>
+  <div class="tl"><b data-t="fullName">UMME ZAIBA</b><br><span data-t="role">SOFTWARE ENGINEER</span></div>
   <div class="tr"><span data-t="city">YOUR CITY</span><br><span id="clock">--:--:--</span></div>
   <div class="bl"><span id="pctHud">00</span><i class="prog"><b id="prog"></b></i><span id="stage">INIT</span></div>
-  <button class="br" id="openCmd">⌘ K &nbsp;MENU</button>
+  <button class="br" id="openCmd">⌘ K &nbsp;MENU</button><button class="th" id="themeTop" aria-label="Toggle light and dark theme">◐ LIGHT / DARK</button>
 </div>
 
 <main>
 <section id="hero" data-stage="00 — INIT">
   <p class="mono tag" data-t="status">● OPEN TO NEW OPPORTUNITIES</p>
-  <h1 id="name" class="name" aria-label="Your Name"><span class="ln" data-w="YOUR"></span><span class="ln" data-w="NAME."></span></h1>
+  <h1 id="name" class="name" aria-label="Umme Zaiba"><span class="ln" data-w="UMME"></span><span class="ln" data-w="ZAIBA."></span></h1>
   <div class="hero-foot">
     <p class="sub"><span data-t="role">Software Engineer</span> — I design and ship <em id="rot">fast interfaces</em> end&#8209;to&#8209;end.</p>
     <div class="session mono" id="session" aria-hidden="true">
@@ -38,29 +38,53 @@
   <div class="cue mono">SCROLL TO BEGIN <i></i></div>
 </section>
 
-<section id="about" class="manifesto" data-stage="01 — MANIFEST">
-  <div class="stick">
-    <p class="mono lbl">(HELLO)</p>
-    <p class="words" id="words"></p>
+<section id="about" data-stage="01 — ABOUT">
+  <div class="shead"><p class="mono lbl">(ABOUT)</p><h2>A little <em>about me</em></h2></div>
+  <div class="about-grid">
+    <div>
+      <p class="statement reveal" id="statement"></p>
+      <p class="body reveal" data-t="bio2"></p>
+      <ul class="stats reveal" id="stats"></ul>
+    </div>
+    <aside class="idcard reveal">
+      <div class="mono"><span>ID.CARD</span><span id="idver">v1.0</span></div>
+      <div class="mono-big">UZ</div>
+      <dl id="facts"></dl>
+    </aside>
   </div>
 </section>
 
-<section id="work" data-stage="02 — BUILD">
+<section id="services" data-stage="02 — SERVICES">
+  <div class="shead"><p class="mono lbl">(WHAT I DO)</p><h2>How I can <em>help</em></h2></div>
+  <div class="svc" id="svc"></div>
+</section>
+
+<section id="work" data-stage="03 — BUILD">
   <div class="shead"><p class="mono lbl">(SELECTED WORK)</p><h2>Things I've <em>built</em></h2></div>
   <div class="deck" id="deck"></div>
 </section>
 
-<section id="exp" data-stage="03 — CHANGELOG">
+<section id="process" data-stage="04 — PROCESS">
+  <div class="shead"><p class="mono lbl">(HOW I WORK)</p><h2>From idea to <em>production</em></h2></div>
+  <ol class="steps" id="steps"></ol>
+</section>
+
+<section id="exp" data-stage="05 — CHANGELOG">
   <div class="shead"><p class="mono lbl">$ cat CHANGELOG.md</p><h2>Where I've <em>shipped</em></h2></div>
   <ol class="log" id="log"></ol>
 </section>
 
-<section id="stack" data-stage="04 — DEPENDENCIES">
+<section id="stack" data-stage="06 — DEPENDENCIES">
   <div class="shead"><p class="mono lbl">$ cat package.json</p><h2>What I <em>build with</em></h2></div>
   <pre class="code pkg reveal" id="pkg"></pre>
 </section>
 
-<section id="contact" data-stage="05 — DEPLOY">
+<section id="kind" data-stage="07 — FEEDBACK">
+  <div class="shead"><p class="mono lbl">(KIND WORDS)</p><h2>What people <em>say</em></h2></div>
+  <div class="quotes" id="quotes"></div>
+</section>
+
+<section id="contact" data-stage="08 — DEPLOY">
   <p class="mono lbl">(DEPLOY)</p>
   <h2 class="big-cta">Let's ship<br>something<em>.</em></h2>
   <button class="mail" id="mail" data-cursor="COPY"><span id="mailTxt">hello@example.com</span><i>↗</i></button>
@@ -68,7 +92,7 @@
 </section>
 </main>
 
-<footer class="mono"><span>© <span id="yr"></span> <span data-t="fullName">YOUR NAME</span></span><span id="build">build #0000 · main · deployed</span><span><button id="themeBtn" class="lnk">TOGGLE THEME</button></span></footer>
+<footer class="mono"><span>© <span id="yr"></span> <span data-t="fullName">UMME ZAIBA</span></span><span id="build">build #0000 · main · deployed</span><span><button id="themeBtn" class="lnk">TOGGLE THEME</button></span></footer>
 
 <div class="toast mono" id="toast">COPIED TO CLIPBOARD</div>
 <div class="cmd" id="cmd" hidden><div class="panel"><input id="cmdIn" placeholder="Type a command…" autocomplete="off"><ul id="cmdList"></ul></div></div>
