@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Your Name — Developer & Designer</title>
+<meta name="description" content="Portfolio of Your Name — building thoughtful, fast, beautiful software.">
+<meta name="theme-color" content="#0b0b0f">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="grain"></div><div class="spot" id="spot"></div>
+
+<header class="nav">
+  <a href="#top" class="logo" data-t="initials">YN</a>
+  <nav><a href="#work">Work</a><a href="#about">About</a><a href="#stack">Stack</a><a href="#contact">Contact</a></nav>
+  <button class="kbd" id="openCmd" aria-label="Open command menu">⌘ K</button>
+</header>
+
+<main id="top">
+<section class="hero">
+  <p class="eyebrow"><span class="dot"></span> <span data-t="status">Available for new projects</span> · <span id="clock">--:--</span> <span data-t="city">Your City</span></p>
+  <h1 class="big"><span class="line"><span data-t="first">Your</span></span><span class="line"><em data-t="last">Name</em><i class="orb"></i></span></h1>
+  <p class="lede"><span data-t="role">Developer</span> crafting <span class="rot" id="rot">fast interfaces</span> &amp; reliable systems.</p>
+  <div class="cta"><a class="btn mag" href="#work">See my work</a><a class="btn ghost mag" href="#contact">Say hello</a></div>
+  <div class="scroll">scroll ↓</div>
+</section>
+
+<div class="marquee" aria-hidden="true"><div class="track" id="marq"></div></div>
+
+<section id="work" class="sec">
+  <h2 class="h2"><span>Selected</span> <em>work</em></h2>
+  <div class="bento" id="bento"></div>
+</section>
+
+<section id="about" class="sec about">
+  <h2 class="h2"><span>A bit</span> <em>about me</em></h2>
+  <div class="cols">
+    <p class="reveal" data-t="bio">Replace this with a short, human intro: who you are, what you love building, and what makes your approach different. Two or three sentences is plenty.</p>
+    <ul class="stats" id="stats"></ul>
+  </div>
+  <ol class="timeline" id="timeline"></ol>
+</section>
+
+<section id="stack" class="sec">
+  <h2 class="h2"><span>Tools of</span> <em>the trade</em></h2>
+  <div class="chips" id="chips"></div>
+</section>
+
+<section id="contact" class="sec contact">
+  <p class="eyebrow">Got an idea?</p>
+  <a class="mail mag" id="mail" href="mailto:hello@example.com">hello@example.com</a>
+  <div class="socials" id="socials"></div>
+</section>
+</main>
+
+<footer>© <span id="yr"></span> <span data-t="fullName">Your Name</span> · Built by hand, hosted on Render · <button id="themeBtn" class="link">Toggle theme</button></footer>
+
+<div class="cmd" id="cmd" hidden><div class="panel">
+  <input id="cmdIn" placeholder="Type a command or jump to…" autocomplete="off"><ul id="cmdList"></ul>
+</div></div>
+<script src="script.js"></script>
+</body></html>
