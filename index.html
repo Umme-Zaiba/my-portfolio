@@ -3,63 +3,76 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Your Name — Developer & Designer</title>
-<meta name="description" content="Portfolio of Your Name — building thoughtful, fast, beautiful software.">
-<meta name="theme-color" content="#0b0b0f">
+<title>Your Name — Software Engineer</title>
+<meta name="description" content="Portfolio of Your Name — software engineer building fast, considered products.">
+<meta name="theme-color" content="#0a0a0b">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
-<div class="grain"></div><div class="spot" id="spot"></div>
+<body class="loading">
 
-<header class="nav">
-  <a href="#top" class="logo" data-t="initials">YN</a>
-  <nav><a href="#work">Work</a><a href="#about">About</a><a href="#stack">Stack</a><a href="#contact">Contact</a></nav>
-  <button class="kbd" id="openCmd" aria-label="Open command menu">⌘ K</button>
-</header>
+<div id="loader"><div class="boot" id="boot"></div><div class="count"><span id="pct">0</span><i>%</i></div><div class="bar"><b id="bar"></b></div></div>
 
-<main id="top">
-<section class="hero">
-  <p class="eyebrow"><span class="dot"></span> <span data-t="status">Available for new projects</span> · <span id="clock">--:--</span> <span data-t="city">Your City</span></p>
-  <h1 class="big"><span class="line"><span data-t="first">Your</span></span><span class="line"><em data-t="last">Name</em><i class="orb"></i></span></h1>
-  <p class="lede"><span data-t="role">Developer</span> crafting <span class="rot" id="rot">fast interfaces</span> &amp; reliable systems.</p>
-  <div class="cta"><a class="btn mag" href="#work">See my work</a><a class="btn ghost mag" href="#contact">Say hello</a></div>
-  <div class="scroll">scroll ↓</div>
-</section>
+<canvas id="bg"></canvas>
+<div class="cur" id="cur"></div><div class="ring" id="ring"><span></span></div>
 
-<div class="marquee" aria-hidden="true"><div class="track" id="marq"></div></div>
+<div class="hud">
+  <div class="tl"><b data-t="fullName">YOUR NAME</b><br><span data-t="role">SOFTWARE ENGINEER</span></div>
+  <div class="tr"><span data-t="city">YOUR CITY</span><br><span id="clock">--:--:--</span></div>
+  <div class="bl"><span id="pctHud">00</span><i class="prog"><b id="prog"></b></i><span id="stage">INIT</span></div>
+  <button class="br" id="openCmd">⌘ K &nbsp;MENU</button>
+</div>
 
-<section id="work" class="sec">
-  <h2 class="h2"><span>Selected</span> <em>work</em></h2>
-  <div class="bento" id="bento"></div>
-</section>
-
-<section id="about" class="sec about">
-  <h2 class="h2"><span>A bit</span> <em>about me</em></h2>
-  <div class="cols">
-    <p class="reveal" data-t="bio">Replace this with a short, human intro: who you are, what you love building, and what makes your approach different. Two or three sentences is plenty.</p>
-    <ul class="stats" id="stats"></ul>
+<main>
+<section id="hero" data-stage="00 — INIT">
+  <p class="mono tag" data-t="status">● OPEN TO NEW OPPORTUNITIES</p>
+  <h1 id="name" class="name" aria-label="Your Name"><span class="ln" data-w="YOUR"></span><span class="ln" data-w="NAME."></span></h1>
+  <div class="hero-foot">
+    <p class="sub"><span data-t="role">Software Engineer</span> — I design and ship <em id="rot">fast interfaces</em> end&#8209;to&#8209;end.</p>
+    <div class="session mono" id="session" aria-hidden="true">
+      <div class="sh"><i></i><i></i><i></i><span>session.log</span></div>
+      <div id="sLog"></div>
+    </div>
   </div>
-  <ol class="timeline" id="timeline"></ol>
+  <div class="cue mono">SCROLL TO BEGIN <i></i></div>
 </section>
 
-<section id="stack" class="sec">
-  <h2 class="h2"><span>Tools of</span> <em>the trade</em></h2>
-  <div class="chips" id="chips"></div>
+<section id="about" class="manifesto" data-stage="01 — MANIFEST">
+  <div class="stick">
+    <p class="mono lbl">(HELLO)</p>
+    <p class="words" id="words"></p>
+  </div>
 </section>
 
-<section id="contact" class="sec contact">
-  <p class="eyebrow">Got an idea?</p>
-  <a class="mail mag" id="mail" href="mailto:hello@example.com">hello@example.com</a>
-  <div class="socials" id="socials"></div>
+<section id="work" data-stage="02 — BUILD">
+  <div class="shead"><p class="mono lbl">(SELECTED WORK)</p><h2>Things I've <em>built</em></h2></div>
+  <div class="deck" id="deck"></div>
+</section>
+
+<section id="exp" data-stage="03 — CHANGELOG">
+  <div class="shead"><p class="mono lbl">$ cat CHANGELOG.md</p><h2>Where I've <em>shipped</em></h2></div>
+  <ol class="log" id="log"></ol>
+</section>
+
+<section id="stack" data-stage="04 — DEPENDENCIES">
+  <div class="shead"><p class="mono lbl">$ cat package.json</p><h2>What I <em>build with</em></h2></div>
+  <pre class="code pkg reveal" id="pkg"></pre>
+</section>
+
+<section id="contact" data-stage="05 — DEPLOY">
+  <p class="mono lbl">(DEPLOY)</p>
+  <h2 class="big-cta">Let's ship<br>something<em>.</em></h2>
+  <button class="mail" id="mail" data-cursor="COPY"><span id="mailTxt">hello@example.com</span><i>↗</i></button>
+  <div class="socials mono" id="socials"></div>
 </section>
 </main>
 
-<footer>© <span id="yr"></span> <span data-t="fullName">Your Name</span> · Built by hand, hosted on Render · <button id="themeBtn" class="link">Toggle theme</button></footer>
+<footer class="mono"><span>© <span id="yr"></span> <span data-t="fullName">YOUR NAME</span></span><span id="build">build #0000 · main · deployed</span><span><button id="themeBtn" class="lnk">TOGGLE THEME</button></span></footer>
 
-<div class="cmd" id="cmd" hidden><div class="panel">
-  <input id="cmdIn" placeholder="Type a command or jump to…" autocomplete="off"><ul id="cmdList"></ul>
-</div></div>
+<div class="toast mono" id="toast">COPIED TO CLIPBOARD</div>
+<div class="cmd" id="cmd" hidden><div class="panel"><input id="cmdIn" placeholder="Type a command…" autocomplete="off"><ul id="cmdList"></ul></div></div>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
 <script src="script.js"></script>
 </body></html>
